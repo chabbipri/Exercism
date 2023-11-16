@@ -13,12 +13,6 @@ class Series
     end
   end
 
-  def slices(slice_length)
-    validate_argument(slice_length)
-
-    chars.each_cons(slice_length).to_a.map(&:join)
-  end
-
   private
 
   def validate_argument(slice_length)
