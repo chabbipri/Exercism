@@ -6,7 +6,7 @@ class Hamming
     return 0 if dna_1 == dna_2
 
     if dna_1 != dna_2
-      v = fetch_hamming_distance(dna_1.split(""), dna_2.split(""))
+      fetch_hamming_distance(dna_1.split(""), dna_2.split(""))
     end
   end
 
