@@ -1,5 +1,4 @@
 class Phrase
-
   def initialize(string)
       @words_list = string.downcase.scan(/[\w']+/)
   end
@@ -15,5 +14,4 @@ class Phrase
     end
     counts
   end
-
 end
