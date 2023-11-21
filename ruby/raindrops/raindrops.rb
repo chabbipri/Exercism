@@ -1,22 +1,25 @@
+class Raindrops
+  RAINDROP_SOUNDS = {
+    3 => "Pling",
+    5 => "Plang",
+    7 => "Plong",
+  }
 
-class Raindrops 
+  def self.convert(number)
+    return number.to_s if raindrops_sounds(number) == ""
 
-  def self.convert(value)
-    return rain_drops_sound(value) if rain_drops_sound(value) != ""
-    return value.to_s if rain_drops_sound(value) == ""
+    raindrops_sounds(number)
   end
 
-  def self.rain_drop_values
-    {3 => "Pling", 5 => "Plang", 7 => "Plong"}
+  private
+
+  def self.raindrops_sounds(number)
+    RAINDROP_SOUNDS.select do |factor, _sound|
+      divisble_by?(number, factor)
+    end.values.join
   end
 
-  def self.rain_drops_sound(value)
-    sound = []
-
-    sound << rain_drop_values[3] if value == 3 || value%3 == 0
-    sound << rain_drop_values[5] if value == 5 || value%5 == 0
-    sound << rain_drop_values[7] if value == 7 || value%7 == 0
-
-    sound.join
+  def self.divisble_by?(dividend, divisor)
+    dividend % divisor == 0
   end
-end 
+end

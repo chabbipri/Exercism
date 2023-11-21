@@ -1,5 +1,5 @@
-require 'minitest/autorun'
-require_relative 'raindrops'
+require "minitest/autorun"
+require_relative "raindrops"
 
 class RaindropsTest < Minitest::Test
   def test_the_sound_for_1_is_1
