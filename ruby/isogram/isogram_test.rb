@@ -3,7 +3,6 @@ require_relative 'isogram'
 
 class IsogramTest < Minitest::Test
   def test_empty_string
-    # skip
     input = ""
     assert Isogram.isogram?(input), "Expected true, '#{input}' is an isogram"
   end

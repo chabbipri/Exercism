@@ -1,7 +1,9 @@
 class Isogram
-  def self.isogram?(input)
-    return true if input == ""
+  def self.isogram?(word)
+    return true if word.empty?
 
-    input.gsub(/\W+/, '').downcase.split("").uniq.size == input.gsub(/\W+/, '').split("").size
+    characters = word.downcase.scan(/\w/)
+
+    characters.uniq.size == characters.size
   end
 end
