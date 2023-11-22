@@ -1,6 +1,7 @@
 require "minitest/autorun"
 require_relative "word_count"
 
+
 class WordCountTest < Minitest::Test
   def test_count_one_word
     phrase = Phrase.new("word")
@@ -45,7 +46,7 @@ class WordCountTest < Minitest::Test
   end
 
   def test_normalize_case
-    phrase = Phrase.new("go Go GO Stop stop")
+  phrase = Phrase.new("go Go GO Stop stop")
     counts = { "go" => 3, "stop" => 2 }
     assert_equal counts, phrase.word_count
   end
@@ -65,14 +66,12 @@ class WordCountTest < Minitest::Test
   end
 
   def test_substrings_from_the_beginning
-    # skip
     phrase = Phrase.new("Joe can't tell between app, apple and a.")
     counts = { "joe" => 1, "can't" => 1, "tell" => 1, "between" => 1, "app" => 1, "apple" => 1, "and" => 1, "a" => 1 }
     assert_equal counts, phrase.word_count
   end
 
   def test_multiple_spaces_not_detected_as_a_word
-    # skip
     phrase = Phrase.new(" multiple   whitespaces")
     counts = { "multiple" => 1, "whitespaces" => 1 }
     assert_equal counts, phrase.word_count

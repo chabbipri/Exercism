@@ -13,3 +13,4 @@ class Phrase
     words.tally
   end
 end
+
