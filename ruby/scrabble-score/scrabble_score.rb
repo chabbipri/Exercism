@@ -8,16 +8,25 @@ class Scrabble
     { letters: "J, X", value: 8 },
     { letters: "Q, Z", value: 10 },
   ]
-  attr_reader :word
+  attr_reader :letters_list
 
   def initialize(word)
-    @word = word.downcase
+    @letters_list = word.downcase.chars
   end
+
+  # def score
+  #   total_score = w
+  #   word.chars.each do |letter|
+  #     total_score += fetch_value_of_letter(letter)
+  #   end
+  #   total_score
+  # end
 
   def score
     total_score = 0
-    word.chars.each do |letter|
-      total_score += fetch_value_of_letter(letter)
+    until letters_list.empty?
+      total_score += score_of_letter
+      delete_letter
     end
     total_score
   end
@@ -28,5 +37,13 @@ class Scrabble
     SCORES.each do |letters_score|
       return letters_score[:value] if letters_score[:letters].downcase.include?(letter)
     end
+  end
+
+  def delete_letter
+    letters_list.delete(letters_list.first)
+  end
+
+  def score_of_letter
+    fetch_value_of_letter(letters_list.first) * letters_list.count(letters_list.first)
   end
 end
