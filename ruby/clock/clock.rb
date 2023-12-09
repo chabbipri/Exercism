@@ -8,34 +8,43 @@ class Clock
      @minute = time.has_key?(:minute) ? time[:minute] : 0
   end
 
-  def to_s
+  def hour_calculation(hour, minute)
     if hour < 0
-     h = hour + 24
-     until h > 0
-      h = h + 24
-     end
+      cal_hour = hour + (minute/60)
     else
-      h = hour % 12 + (minute/60)
-      if h < 0
-       until h > 0
-        h = h + 24
-       end
-      else
-        until h < 24
-          h = h - 24
-        end
+      cal_hour = hour % 12 + (minute/60)
+    end
+    if cal_hour < 0
+      until cal_hour > 0
+        cal_hour = cal_hour + 24
       end
     end
+    if cal_hour > 24
+      until cal_hour < 24
+        cal_hour = cal_hour - 24
+      end
+    end
+    return cal_hour
+  end
 
+  def minute_calculation(minute)
     if minute < 0
-     m = minute + 60
-     until m > 0
-      m = m + 60
+     cal_minute = minute + 60
+     until cal_minute >= 0
+      cal_minute = cal_minute + 60
      end
     else
-     m = minute % 60
+     cal_minute = minute % 60
     end
+    return cal_minute
+  end
 
-    "#{sprintf("%02d", h)}:#{sprintf("%02d", m)}"
+
+
+  def to_s
+   hrs = hour_calculation(hour, minute)
+   mins = minute_calculation(minute)
+
+    "#{sprintf("%02d", hrs)}:#{sprintf("%02d", mins)}"
   end
 end
