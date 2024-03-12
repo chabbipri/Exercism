@@ -1,5 +1,6 @@
 require "minitest/autorun"
 require_relative "raindrops"
+require_relative "raindrops_pratice"
 
 class RaindropsTest < Minitest::Test
   def test_the_sound_for_1_is_1
