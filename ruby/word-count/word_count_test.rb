@@ -1,5 +1,6 @@
 require "minitest/autorun"
 require_relative "word_count"
+# require_relative "pratice"
 
 class WordCountTest < Minitest::Test
   def test_count_one_word
@@ -51,7 +52,6 @@ class WordCountTest < Minitest::Test
   end
 
   def test_with_apostrophes
-    skip
     phrase = Phrase.new("'First: don't laugh. Then: don't cry. You're getting it.'")
     counts = { "first" => 1, "don't" => 2, "laugh" => 1, "then" => 1, "cry" => 1, "you're" => 1, "getting" => 1, "it" => 1 }
     assert_equal counts, phrase.word_count
