@@ -1,30 +1,29 @@
 require 'pry'
 class Luhn
   def self.valid?(digits_string)
-    return false if digits_string.chars.size == 1
+    string = digits_string.gsub(" ", "")
+    non_digits = string.scan(/\D/)
+    return false if non_digits.any?
 
-    return false if !digits_string.gsub(" ", "").scan(/\D/).empty?
+    digits = string.reverse.chars.map(&:to_i)
+    return false if digits.one?
 
-    digits = digits_string.reverse.gsub(" ", "").chars
+    sum =
+      digits.map.with_index do |digit, i|
+        i.odd? ? double_digit(digit) : digit
+      end.sum
 
-    return false if digits.size == 1
-
-    sum = 0
-    i = 1
-
-    digits.each do |digit|
-      i % 2 == 0 ? sum += double_digit(digit) : sum += digit.to_i
-      i += 1
-    end
-    sum % 10 == 0
+    divisible?(sum, by: 10)
   end
 
   private
 
   def self.double_digit(digit)
-    double_digit = digit.to_i * 2
-    digit = double_digit - 9 if double_digit > 9
-    digit = double_digit if double_digit <= 9
-    digit.to_i
+    (digit * 2).digits.sum
+  end
+
+  def self.divisible?(dividend, by:)
+    divisor = by
+    dividend % divisor == 0
   end
 end
