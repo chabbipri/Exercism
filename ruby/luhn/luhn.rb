@@ -1,4 +1,3 @@
-require 'pry'
 class Luhn
   def self.valid?(digits_string)
     string = digits_string.gsub(" ", "")
