@@ -1,5 +1,7 @@
 require 'minitest/autorun'
 require_relative 'luhn'
+require_relative 'pratice'
+require_relative 'pratice_2'
 
 class LuhnTest < Minitest::Test
   def test_single_digit_strings_can_not_be_valid

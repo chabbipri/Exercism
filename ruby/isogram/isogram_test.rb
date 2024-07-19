@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require_relative 'isogram'
 require_relative 'pratice'
+require_relative 'pratice_2'
 
 class IsogramTest < Minitest::Test
   def test_empty_string

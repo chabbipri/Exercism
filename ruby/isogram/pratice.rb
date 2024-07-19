@@ -1,17 +1,13 @@
 class Isogram
   def self.isogram?(input)
-    return repeated_letter(input)
-  end
+    letter_count = Hash.new(0)
 
-  private
-
-  def self.repeated_letter(input)
-    return true if input == ""
-    letter_count = []
-
-    input.downcase.gsub(/\W/, "").split("").each do |letter|
-      return false if letter_count.include?(letter)
-      letter_count << letter
+    input.split("/\w/").each do |letter|
+      if letter_count.key?(letter)
+        return false
+      else
+        letter_count[letter] += 1
+      end
     end
     return true
   end
