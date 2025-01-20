@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require_relative 'two_fer'
+require_relative 'two_fer_1'
 
 class TwoFerTest < Minitest::Test
   def test_no_name_given
