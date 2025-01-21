@@ -1,5 +1,6 @@
 require 'minitest/autorun'
-require_relative 'high_scores'
+# require_relative 'high_scores'
+require_relative 'pratice'
 
 class HighScoresTest < Minitest::Test
   def test_list_of_scores
@@ -38,7 +39,6 @@ class HighScoresTest < Minitest::Test
   end
 
   def test_top_3_scores_personal_top_when_there_is_only_one
-    skip
     scores = [40]
     assert_equal [40], HighScores.new(scores).personal_top_three
   end
