@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'pratice_2'
+require_relative 'pratice_3'
 
 class AcronymTest < Minitest::Test
   def test_basic
