@@ -1,5 +1,6 @@
 require "minitest/autorun"
 require_relative "scrabble_score"
+require_relative "pratice"
 
 class ScrabbleScoreTest < Minitest::Test
   def test_lowercase_letter

@@ -2,6 +2,7 @@ require 'minitest/autorun'
 # require_relative 'matrix'
 # require_relative 'matrix_pratice'
 require_relative 'matrix_2'
+require_relative 'pratice_3'
 
 class MatrixTest < Minitest::Test
   def test_extract_row_from_one_number_matrix
