@@ -1,5 +1,6 @@
 require "minitest/autorun"
-require_relative "word_count"
+# require_relative "word_count"
+require_relative "pratice_2"
 # require_relative "pratice"
 
 class WordCountTest < Minitest::Test
