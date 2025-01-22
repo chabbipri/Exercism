@@ -1,7 +1,8 @@
 require 'minitest/autorun'
-require_relative 'series'
-require_relative 'series_pratice'
-require_relative 'pratice'
+# require_relative 'series'
+# require_relative 'series_pratice'
+# require_relative 'pratice'
+require_relative 'pratice_2'
 
 class SeriesTest < Minitest::Test
   def test_slices_of_one_from_one
