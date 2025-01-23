@@ -1,5 +1,6 @@
 require 'minitest/autorun'
-require_relative 'pratice'
+# require_relative 'pratice'
+require_relative 'pratice2'
 
 class HammingTest < Minitest::Test
   def test_empty_strands
