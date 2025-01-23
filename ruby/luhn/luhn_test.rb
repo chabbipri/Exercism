@@ -1,7 +1,8 @@
 require 'minitest/autorun'
-require_relative 'luhn'
-require_relative 'pratice'
-require_relative 'pratice_2'
+# require_relative 'luhn'
+# require_relative 'pratice'
+# require_relative 'pratice_2'
+require_relative 'pratice_4'
 
 class LuhnTest < Minitest::Test
   def test_single_digit_strings_can_not_be_valid
@@ -89,6 +90,6 @@ class LuhnTest < Minitest::Test
   end
 
   def test_non_numeric_non_space_char_in_the_middle_with_a_sum_thats_divisible_by_10_isnt_allowed
-    refute Luhn.valid?("59%59")
+    refute Luhn.valid?("59%nclude?")
   end
 end
